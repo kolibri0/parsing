@@ -12,6 +12,7 @@ def get_data(url, headers):
     serial_result_list = []
     check = os.path.exists('data/page_1.html')
     if not check:
+        os.mkdir("data")
         r = requests.get(url=url, headers=headers)
         src = r.text
         with open('data/page_1.html', 'w', encoding='utf-16') as file:
@@ -30,7 +31,7 @@ def get_data(url, headers):
             with open(f'data/page_{page}.html', 'w', encoding='utf-16') as file:
                 file.write(res.text)
             print(f'page : {page}')
-            sleep(5)
+            sleep(3)
 
             with open(f'data/page_{page}.html', encoding='utf-16', errors='ignore') as file:
                 src = file.read()
