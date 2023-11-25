@@ -64,8 +64,10 @@ def get_data(url, headers):
             )
             print(f'{item_title} is ready')
             sleep(2)
-    with open('result_serial.json', 'w') as file:
-        json.dump(serial_result_list, file, indent=4, ensure_ascii=False)
+
+
+with open('result_serial.json', 'w') as file:
+    json.dump(serial_result_list, file, indent=4, ensure_ascii=False)
 
 
 def main():
